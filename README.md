@@ -12,8 +12,8 @@ This Solidity smart contract implements a simple token system with minting and b
 
 * Token Details: The contract has public variables to store details about the token, including its name, abbreviation, and total supply.
 * Address Balances: The contract uses a mapping to associate addresses with their token balances (address => uint).
-* Mint Function: The contract includes a 'mint' function that increases the total supply by a specified value and increments the balance of the sender's address by the same value.
-* Burn Function: The contract has a 'burn' function that reduces the total supply and decreases the balance of the sender's address by a specified value.
+* Mint() Function: The contract includes a 'mint' function that increases the total supply by a specified value and increments the balance of the sender's address by the same value.
+* Burn()Function: The contract has a 'burn' function that reduces the total supply and decreases the balance of the sender's address by a specified value.
 * Balance Check: The 'burn' function includes conditional checks to ensure that the balance of the sender is greater than or equal to the amount intended to be burned.
 
 ### Contract Details
@@ -34,9 +34,9 @@ string public tokenName = "MXP";
 
 ### Functions
 
-* 'mint(address _address, uint _value)': A function for minting new tokens. It increases the total supply and the balance of the specified address.
+* mint(address _address, uint _value): A function for minting new tokens. It increases the total supply and the balance of the specified address.
 
-* 'burn(address _address, uint _value)': A function for burning tokens. It decreases the total supply and the balance of the specified address, but only if the sender's balance is sufficient.
+* burn(address _address, uint _value): A function for burning tokens. It decreases the total supply and the balance of the specified address, but only if the sender's balance is sufficient.
 ```
 // mint() function
 function mint(address _address, uint _value) public {
@@ -54,10 +54,14 @@ function burn( address _address,uint _value) public {
 
 ## Implementation
 
-To use this contract, you can deploy it to an Ethereum blockchain using a development environment like Remix or Truffle. Here's a basic example of how to interact with the contract:
+To use this contract, you can deploy it to an Ethereum blockchain using a development environment like Remix or Truffle. Here's a step by step explanation of how to interact with the contract:
 
-1. Deploy the contract.
-2. Call the mint() function to create new tokens and allocate them to an address.
-3. Call the burn() function to destroy a certain amount of tokens, provided that the sender has a sufficient balance.
+1. Go to compiler icon and click on auto-compile.
+2. Next, go to deploy icon and press Deploy button.
+3. Copy the account address.
+4. Call the mint() function to create new tokens and allocate them to the address copied earlier. Pass some integer to the value parameter and press transact.
+5. Check the value of public variable 'totalSupply'.
+6. Next, Call the burn() function to destroy a certain amount of tokens, provided that the sender has a sufficient balance. Pass address and some integer to the token and press transact.
+7. Check the value of mapping variable 'balance'.
 
 
