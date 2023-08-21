@@ -24,8 +24,8 @@ This Solidity smart contract implements a simple token system with minting and b
 * balances: A mapping that associates addresses with their token balances.
 ```
 // public variables
-string public tokenName = "MXP";
-    string public abbrv = "MX";
+string public tokenName = "PLETHORA";
+    string public abbrv = "PL";
     uint public totalSupply = 0;
     
     //mapping variables
